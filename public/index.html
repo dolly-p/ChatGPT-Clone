@@ -9,27 +9,70 @@
     <!--link for Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Title -->
+    <title>Olympians GPT</title>
 </head>
 <body class="bg-white dark:bg-black text-black dark:text-white">
     <div class="h-screen w-full">
-        <header class="w-full flex items-center justify-center p-4">
-            <div class="flex hover:bg-gray-700 p-1.5 rounded-md">
-                <div class="header_text flex gap-2 items-center">
-                    <div class="torch_img w-[20px] h-[20px]">
-                        <img src="images/torch.png" alt="torch-image" class="w-full h-full object-cover">
+        <div class="relative container max-w-full h-full flex flex-col ">
+            <header class="w-full flex items-center justify-center p-4 sticky top-0 z-0">
+                <div class="flex hover:bg-gray-700 p-1.5 rounded-md">
+                    <div class="header_text flex gap-2 items-center">
+                        <div class="torch_img w-[20px] h-[20px]">
+                            <img src="images/torch.png" alt="torch-image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex ite items-center">
+                            <h2 class="text-xl">Olympians GPT</h2>
+                            <span class="material-symbols-outlined">
+                                stat_minus_1
+                                </span>
+                        </div>
+                        
+    
                     </div>
-                    <div class="flex ite items-center">
-                        <h2 class="text-xl">Olympians GPT</h2>
+                </div>
+            </header>
+    
+            <main class="h-full relative w-full flex-1 justify-end items-center">
+                <div class="presentation w-[90%] mx-auto max-w-[785px] h-full flex flex-col justify-end">
+
+                    <div class="suggestion-box grid w-full grid-flow-row grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-2">
+                        <div class="flex flex-col gap-2">
+                            <div class="py-2 px-5 border-solid border-[1px] border-gray-400 rounded-2xl">
+                                <h2 class="text-base">Help me study</h2>
+                                <p class="opacity-45 text-sm">to pass an exam</p>
+                            </div>
+                            <div class="py-2 px-5 border-solid border-[1px] border-gray-400 rounded-2xl">
+                                <h2 class="text-base">Write a thank-you note</h2>
+                                <p class="opacity-45 text-sm">to my best friend</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <div class="py-2 px-5 border-solid border-[1px] border-gray-400 rounded-2xl">
+                                <h2 class="text-base">Make me a website</h2>
+                                <p class="opacity-45 text-sm">make it look nice</p>
+                            </div>
+                            <div class="py-2 px-5 border-solid border-[1px] border-gray-400 rounded-2xl">
+                                <h2 class="text-base">Write me a love letter</h2>
+                                <p class="opacity-45 text-sm">to my crush</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input_section rounded-full bg-gray-750 flex flex-row justify-between items-center px-3 my-5">
+                        <textarea id="prompt-textarea" tabindex="0"rows="1" placeholder="OlympiansGPT got you!" class="m-0 resize-none border-0 bg-transparent px-0 outline-none w-[95%] py-3"></textarea>
+
                         <span class="material-symbols-outlined">
-                            stat_minus_1
+                            send
                             </span>
                     </div>
-                    
 
                 </div>
-            </div>
-        </header>
+            </main>
+        </div>
+        
     </div>
     
 </body>
