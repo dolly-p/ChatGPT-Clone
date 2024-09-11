@@ -18,16 +18,16 @@ const getResponse = async(value)=>{
     })
     const result = await response.json();
     const text = result.candidates[0].content.parts[0].text;
-    return text
+    aiResponseCard(text);
 }
 
 textarea.addEventListener('keydown', async(e) => {
+    textarea.style.color = "white"
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
-        const response = await getResponse(textarea.value);
         userCard(textarea.value)
+        getResponse(textarea.value);
         textarea.value = '';
-        aiResponseCard(response);
     } else if (e.key === 'Enter' && e.shiftKey ) {
       e.preventDefault();
       const currentValue = textarea.value;
@@ -79,11 +79,10 @@ const aiResponseCard = (response) =>{
 }
 
 //send icon 
-sendButton.addEventListener('click', async() => {
+sendButton.addEventListener('click', () => {
         const userInput = textarea.value.trim();
-        userCard(userInput);
-        const response = await getResponse(textarea.value);
         textarea.value = '';
-        aiResponseCard(response);
-        
+        getResponse(userInput);
+        userCard(userInput);
   });
+
