@@ -2,6 +2,7 @@
   "name": "week4",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch"
   },
