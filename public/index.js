@@ -14,3 +14,34 @@ async function getResponse(userMessage) {
 }
 
 getResponse(value)
+
+
+
+
+//for the textarea
+
+const textarea = document.getElementById('prompt-textarea');
+  const sendButton = document.getElementById('send-button');
+
+  textarea.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      console.log('Sending message:', textarea.value);
+      textarea.value = '';
+    } else if (e.key === 'Enter' && e.shiftKey ) {
+      e.preventDefault();
+      const currentValue = textarea.value;
+      const cursorPosition = textarea.selectionStart;
+      const newLine = '\n';
+      textarea.value = currentValue.substring(0, cursorPosition) + newLine + currentValue.substring(cursorPosition);
+      textarea.selectionStart = cursorPosition + 1;
+      textarea.selectionEnd = cursorPosition + 1;
+      textarea.focus();
+    }
+  });
+
+  sendButton.addEventListener('click', () => {
+    
+    console.log('Sending message:', textarea.value);
+    
+    textarea.value = '';
+  });
