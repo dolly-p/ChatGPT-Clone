@@ -1,5 +1,6 @@
 const textarea = document.getElementById('prompt-textarea');
 const sendButton = document.getElementById('send-button');
+const deleteButton = document.getElementById('delete-button');
 const messageContainer = document.querySelector("#message-container");
 const suggestionBox = document.querySelector(".suggestion-box")
 const API_KEY = "AIzaSyDxrRFFFj8LZ-IUqFSpLqogmWY56bcflEo"
@@ -103,6 +104,11 @@ sendButton.addEventListener('click', () => {
         userCard(lsGet(userInput))
         getResponse(lsGet(userInput));
   });
+
+// delete icon
+deleteButton.addEventListener('click', ()=> {
+    textarea.value = "";
+})
 
 // local storage setting
 function lsSet(key,value){
