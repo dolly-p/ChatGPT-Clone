@@ -18,16 +18,33 @@ const getResponse = async(value)=>{
     })
     const result = await response.json();
     const text = result.candidates[0].content.parts[0].text;
-    return text
+    lsSet(text,text)
+    aiResponseCard(text);
 }
 
+// get items stores in local storage i mean ls anyhow
+const getItemsInOrder = (()=>{
+    // Retrieve the keyOrder array from localStorage
+    let keyOrder = JSON.parse(localStorage.getItem('keyOrder')) || [];
+    console.log(keyOrder)
+    if (keyOrder.length >= 1){
+        for (let i=0; i < keyOrder.length;){
+            userCard(localStorage.getItem(keyOrder[i]))
+            aiResponseCard(localStorage.getItem(keyOrder[i+1]));
+            i = i + 2
+            console.log(i)
+        }
+    }
+  })()
+
 textarea.addEventListener('keydown', async(e) => {
+    textarea.style.color = "white"
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
-        const response = await getResponse(textarea.value);
-        userCard(textarea.value)
+        lsSet(textarea.value,textarea.value)
+        userCard(lsGet(textarea.value))
+        getResponse(lsGet(textarea.value));
         textarea.value = '';
-        aiResponseCard(response);
     } else if (e.key === 'Enter' && e.shiftKey ) {
       e.preventDefault();
       const currentValue = textarea.value;
@@ -44,7 +61,7 @@ textarea.addEventListener('keydown', async(e) => {
 
 
 //the user's prompt
-const userCard = (userInput)=>{
+function userCard (userInput){
         suggestionBox.style.display = "none";
         const userMessageDiv = document.createElement('div');
         userMessageDiv.className = 'flex items-center gap-2 py-2';
@@ -61,7 +78,7 @@ const userCard = (userInput)=>{
 
 
 //the ai response div
-const aiResponseCard = (response) =>{
+function aiResponseCard (response){
         const aiResponseDiv = document.createElement('div');
         aiResponseDiv.className = 'flex items-center gap-2 py-2'; 
 
@@ -79,11 +96,24 @@ const aiResponseCard = (response) =>{
 }
 
 //send icon 
-sendButton.addEventListener('click', async() => {
+sendButton.addEventListener('click', () => {
         const userInput = textarea.value.trim();
-        userCard(userInput);
-        const response = await getResponse(textarea.value);
         textarea.value = '';
-        aiResponseCard(response);
-        
+        lsSet(userInput,userInput)
+        userCard(lsGet(userInput))
+        getResponse(lsGet(userInput));
   });
+
+// local storage setting
+function lsSet(key,value){
+    localStorage.setItem(key, value);
+    let keyOrder = JSON.parse(localStorage.getItem('keyOrder')) || [];
+    keyOrder.push(key);
+    localStorage.setItem('keyOrder', JSON.stringify(keyOrder));
+}
+
+// local storage getting
+function lsGet(name){
+    return localStorage.getItem(name)
+}
+
