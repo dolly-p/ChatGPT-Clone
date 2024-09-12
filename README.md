@@ -31,7 +31,7 @@
 
 ### To build a ChatGPT clone
 
-This project task is to build a chatGPT clone that has all the functionalities and capabilities as the ChatGPT by OpenAI.
+This project task is to build a chatGPT clone that has all the functionalities and capabilities like the ChatGPT by OpenAI.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -39,41 +39,20 @@ This project task is to build a chatGPT clone that has all the functionalities a
 
 ### Built With
 
-This project was built mostly using node.js and tailwind is section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+This project was built mostly using Vanilla js, tailwind, Gemini API, also implemented local storage so users can see their history and previous searches.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 
   <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
+- [x] Created the frontend UI template using HTML, CSS
+- [x] Used Tailwind for styling
+- [x] Vanilla JS for the API and logic
+- [x] Used Gemini API
 - [ ] Add Additional Templates w/ Examples
 - [ ] Add "components" document to easily copy & paste sections of the readme
 - [ ] Multi-language Support
@@ -115,7 +94,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/your_username/repo_name](https://github.com/dolly-p/ChatGPT-Clone)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
