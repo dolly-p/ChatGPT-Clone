@@ -1,6 +1,7 @@
 const textarea = document.getElementById('prompt-textarea');
 const sendButton = document.getElementById('send-button');
 const deleteButton = document.getElementById('delete-button');
+const logoImage = document.querySelector(".logo-image");
 const messageContainer = document.querySelector("#message-container");
 const suggestionBox = document.querySelector(".suggestion-box")
 const API_KEY = "AIzaSyDxrRFFFj8LZ-IUqFSpLqogmWY56bcflEo"
@@ -63,6 +64,7 @@ textarea.addEventListener('keydown', async(e) => {
 
 //the user's prompt
 function userCard (userInput){
+        logoImage.style.display = "none";
         suggestionBox.style.display = "none";
         const userMessageDiv = document.createElement('div');
         userMessageDiv.className = 'flex items-center gap-2 py-2';
