@@ -94,7 +94,7 @@ The following people are the contributors to this project.
 ### Top contributors:
 
 <a href="https://github.com/dolly-p/ChatGPT-Clone/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=othneildrew/Best-README-Template" alt="contrib.rocks image" />
+  <img src="https://contrib.rocks/image?repo=dolly-p/ChatGPT-Clone" />
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
